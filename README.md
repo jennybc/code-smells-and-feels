@@ -71,10 +71,10 @@ James Clear blog post that discusses an Ira Glass interview. Indicative quote:
 
 The teams that bring you
 
-  * [tidyverse packages](https://github.com/orgs/tidyverse/people)
-  * [r-lib packages](https://github.com/orgs/r-lib/people)
-
----  
+  * tidyverse packages: [org members](https://github.com/orgs/tidyverse/people) and [outside collaborators](https://github.com/orgs/tidyverse/outside-collaborators)
+  * r-lib packages: [org members](https://github.com/orgs/r-lib/people) and [outside collaborators](https://github.com/orgs/r-lib/outside-collaborators)
+  
+---
 
 Refactoring  
 Improving the Design of Existing Code  
