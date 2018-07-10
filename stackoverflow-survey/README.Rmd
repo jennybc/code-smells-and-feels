@@ -1,0 +1,123 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Stack Overflow survey analysis
+
+Look at evidence for formal training in CS/programming among those who use R.
+
+Use 2018 Stack Overflow Annual Developer Survey: <https://insights.stackoverflow.com/survey>
+
+Original code from [Julia Silge](https://juliasilge.com), data scientist at  Stack Overflow. Modified by Jenny Bryan.
+
+## Analysis
+
+Load packages.
+
+```{r}
+library(here)
+library(tidyverse)
+library(scales)
+```
+
+Make sure we have the data.
+
+```{r download-data}
+survey_path <- here(
+  "stackoverflow-survey/developer_survey_2018/survey_results_public.csv"
+)
+if (!file.exists(survey_path)) {
+  ## consults Content-Description to get filename
+  dl <- usethis:::download_zip(
+    url = "https://drive.google.com/uc?export=download&id=1_9On2-nsBQIw3JiY43sWbrF8EjrqrR4U",
+    destdir = here("stackoverflow-survey")
+  )
+  target <- here(
+    "stackoverflow-survey",
+    tools::file_path_sans_ext(basename(dl))
+  )
+  utils::unzip(dl, exdir = target)
+  usethis::use_git_ignore(basename(target))
+  unlink(dl)
+}
+```
+
+Load the data.
+
+```{r survey2018}
+theme_set(theme_minimal(base_family="Source Sans Pro"))
+survey2018 <- read_csv(survey_path)
+```
+
+What kinds of majors do R users have?
+
+```{r wrangle}
+users_majors <- survey2018 %>%
+  select(Respondent, LanguageWorkedWith, UndergradMajor) %>%
+  filter(!is.na(UndergradMajor)) %>%
+  mutate(LanguageWorkedWith = str_split(LanguageWorkedWith, pattern = ";")) %>%
+  unnest(LanguageWorkedWith) %>%
+  group_by(Respondent) %>%
+  summarize(UsesR = "R" %in% LanguageWorkedWith,
+            UndergradMajor = first(UndergradMajor))
+
+counts_major <- users_majors %>%
+  count(UsesR, UndergradMajor) %>%
+  mutate(UsesR = if_else(UsesR, "useR", "Other")) %>%
+  spread(UsesR, n, fill = 0)
+
+logratio_major <- counts_major %>%
+  mutate_if(is.numeric, funs((. + 1) / sum(. + 1))) %>%
+  mutate(logratio = log2(useR / Other)) %>%
+  arrange(desc(logratio)) %>%
+  mutate(
+    UndergradMajor = reorder(UndergradMajor, logratio),
+    Direction = factor(if_else(logratio > 0, "useRs", "Other")),
+    Direction = forcats::fct_reorder(Direction, logratio, .desc = TRUE)
+  )
+```
+
+```{r reveal-data}
+knitr::kable(counts_major)
+sum(counts_major$Other)
+sum(counts_major$useR)
+knitr::kable(logratio_major)
+```
+
+```{r major-barchart, fig.height = 6, fig.width = 11, dpi = 300}
+p <- logratio_major %>% 
+  group_by(Direction) %>% 
+  ggplot(aes(UndergradMajor, logratio, fill = Direction)) +
+  geom_col(alpha = 0.9) +
+  coord_flip() +
+  scale_y_continuous(breaks = seq(-2, 2),
+                     labels = c("0.25x", "0.5x", "Same", "2x", "4x"))
+
+## Julia's original
+p +
+  labs(y = "Relatively more from R users", x = NULL,
+       fill = "More likely from...",
+       subtitle = "R users are less likely to have formal programming training",
+       title = "What kinds of undergrad majors do R users have?")       
+
+## For use in Keynote
+p +
+  labs(y = "Relative prevalence", x = NULL,
+       fill = "Major is more common among",
+       caption = "Julia Silge & Jenny Bryan\nSource: 2018 Stack Overflow Annual Developer Survey") +
+  theme(
+    legend.position = "top",
+    legend.title = element_text(size = rel(1.4)),
+    axis.text.y = element_text(size = rel(1.3))
+  )
+```
+
