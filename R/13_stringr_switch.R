@@ -5,10 +5,11 @@ str_pad <- function(string,
                     side = c("left", "right", "both"),
                     pad = " ") {
   side <- match.arg(side)
-  
-  switch(side,
-         left = stri_pad_left(string, width, pad = pad),
-         right = stri_pad_right(string, width, pad = pad),
-         both = stri_pad_both(string, width, pad = pad)
+
+  switch(
+    side,
+    left  =  stri_pad_left(string, width, pad = pad),
+    right = stri_pad_right(string, width, pad = pad),
+    both  =  stri_pad_both(string, width, pad = pad)
   )
 }

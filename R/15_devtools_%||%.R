@@ -17,3 +17,17 @@ if (is.null(path)) {
 `%||%` <- function(x, y) {
   if (is_null(x)) y else x
 }
+
+f <- function(x, y = TRUE, z = NULL) {
+  ...
+  if (is.null(z)) {
+    z <- much_logic(other, stuff, ...)
+  }
+  ...
+}
+
+f <- function(x, y = TRUE, z = NULL) {
+  ...
+  z <- z %||% much_logic(other, stuff, ...)
+  ...
+}
