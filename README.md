@@ -13,9 +13,11 @@ GitHub: [@jennybc](https://github.com/jennybc)
 
 ## Slides
 
-On SpeakerDeck: *to be added*
+<a href="https://speakerdeck.com/jennybc/putting-square-pegs-in-round-holes-using-list-cols-in-your-dataframe"><img src="2018-07_user-brisbane-400.jpeg"></a>
 
-As PDF here: *to be added*
+Slides [on SpeakerDeck](https://speakerdeck.com/jennybc/putting-square-pegs-in-round-holes-using-list-cols-in-your-dataframe)
+
+Slides [as PDF file](2018-07_user-brisbane.pdf) here in this repo
 
 ## Credits and resources
 
