@@ -10,6 +10,16 @@ build_manual <- function(pkg = ".", path = NULL) {
   ...
 }
 
+## https://github.com/r-lib/devtools/blob/bd3bdf15b8f2e5e07d750de4360df28090a9f117/R/install-github.r#L73-L74
+github_remote <- function(repo, username = NULL, ...) {
+  meta <- parse_git_repo(repo)
+  ...
+  meta$username <- username %||%
+    getOption("github.user") %||%
+    stop("Unknown username.")
+  ...
+}
+
 if (is.null(path)) {
   path <- dirname(pkg$path)
 }
