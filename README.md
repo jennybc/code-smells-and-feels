@@ -13,11 +13,11 @@ GitHub: [@jennybc](https://github.com/jennybc)
 
 ## Slides
 
-<a href="https://speakerdeck.com/jennybc/putting-square-pegs-in-round-holes-using-list-cols-in-your-dataframe"><img src="2018-07_user-brisbane-400.jpeg"></a>
+<a href="https://speakerdeck.com/jennybc/code-smells-and-feels"><img src="2018-07_user-brisbane-400.jpeg"></a>
 
-Slides [on SpeakerDeck](https://speakerdeck.com/jennybc/putting-square-pegs-in-round-holes-using-list-cols-in-your-dataframe)
+Slides [on SpeakerDeck](https://speakerdeck.com/jennybc/code-smells-and-feels)
 
-Slides [as PDF file](2018-07_user-brisbane.pdf) here in this repo
+Slides [as PDF file](2018-07_user-brisbane-bryan.pdf) here in this repo
 
 ## Credits and resources
 
