@@ -2,6 +2,7 @@
 
 Talk for [useR!2018](https://user2018.r-project.org) Brisbane  
 by Jenny Bryan  
+[jennybryan.org](https://jennybryan.org)  
 Twitter: [@jennyBryan](https://twitter.com/jennyBryan/)  
 GitHub: [@jennybc](https://github.com/jennybc)  
 
@@ -18,6 +19,12 @@ GitHub: [@jennybc](https://github.com/jennybc)
 Slides [on SpeakerDeck](https://speakerdeck.com/jennybc/code-smells-and-feels)
 
 Slides [as PDF file](2018-07_user-brisbane-bryan.pdf) here in this repo
+
+## Video
+
+Video is available on YouTube: <https://www.youtube.com/watch?v=IzRn-QnOhug&t=2745s>
+
+*note: the audio and video are out of sync ... hopefully will get fixed*
 
 ## Credits and resources
 
