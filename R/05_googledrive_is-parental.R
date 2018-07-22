@@ -9,7 +9,7 @@ drive_cp <- function(file, ...) {
   ...
 }
 
-https://github.com/tidyverse/googledrive/blob/b6e97999d0781c31c69ef6fa93d1091a04b44d20/R/dribble.R#L253
+## https://github.com/tidyverse/googledrive/blob/b6e97999d0781c31c69ef6fa93d1091a04b44d20/R/dribble.R#L253
 
 is_parental <- function(d) {
   stopifnot(inherits(d, "dribble"))
