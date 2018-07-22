@@ -22,9 +22,8 @@ Slides [as PDF file](2018-07_user-brisbane-bryan.pdf) here in this repo
 
 ## Video
 
-Video is available on YouTube: <https://www.youtube.com/watch?v=IzRn-QnOhug&t=2745s>
-
-*note: the audio and video are out of sync ... hopefully will get fixed*
+Video is available on YouTube:  
+<https://www.youtube.com/watch?v=7oyiPBjLAWY>
 
 ## Credits and resources
 
