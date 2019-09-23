@@ -1,6 +1,6 @@
 # Code Smells and Feels
 
-Talk for [useR!2018](https://user2018.r-project.org) Brisbane  
+Talk for initially prepared for [useR!2018](https://user2018.r-project.org) Brisbane, also delivered at the [First Mexican Statistical Association School in Data Science](https://amestad.mx/escuela/1/)  
 by Jenny Bryan  
 [jennybryan.org](https://jennybryan.org)  
 Twitter: [@jennyBryan](https://twitter.com/jennyBryan/)  
@@ -154,3 +154,11 @@ The Pragmatic Programmer
 From Journeyman to Master  
 by Andrew Hunt and David Thomas  
 https://pragprog.com/book/tpp/the-pragmatic-programmer
+
+---
+
+Upgrade your cargo cult for the win  
+https://meaningness.com/metablog/upgrade-your-cargo-cult
+
+Toddler on run bike photo by Jordan Sanchez  
+https://unsplash.com/photos/Vbzx-yy5FoA
