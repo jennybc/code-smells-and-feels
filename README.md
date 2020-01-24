@@ -1,6 +1,6 @@
 # Code Smells and Feels
 
-Talk for initially prepared for [useR!2018](https://user2018.r-project.org) Brisbane, also delivered at the [First Mexican Statistical Association School in Data Science](https://amestad.mx/escuela/1/)  
+Talk initially prepared for [useR!2018](https://user2018.r-project.org) Brisbane. Also delivered elsewhere, such as the [First Mexican Statistical Association School in Data Science](https://amestad.mx/escuela/1/)  
 by Jenny Bryan  
 [jennybryan.org](https://jennybryan.org)  
 Twitter: [@jennyBryan](https://twitter.com/jennyBryan/)  
